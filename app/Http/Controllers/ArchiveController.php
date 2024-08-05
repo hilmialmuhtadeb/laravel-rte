@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Archive;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArchiveController extends Controller
 {
@@ -13,6 +14,8 @@ class ArchiveController extends Controller
     public function index()
     {
         $archives = Archive::all();
+        // implement pagination
+        // $archived = DB::table('archive')
         return view('archive.index', [
             'archives' => $archives
         ]);
